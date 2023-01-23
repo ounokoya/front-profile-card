@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Profile card component</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <main class="
+  w-screen h-screen 
+  max-h-screen max-w-full
+  relative
+  " >
+      <div   class="absolute top-0 left-0  w-screen h-screen   ">
+        <div class=" w-screen h-screen max-h-screen bg-my-dark-cyan " >
+          
+            <div class="fixed -top-80 -left-80 transition-all duration-700 sm:-top-64 sm:-left-64 w-160 h-160    rounded-full bg-cover bg-center bg-[url('images/bg-pattern-top.svg')]" >
+
+            </div>
+            <div class="fixed -bottom-80 -right-80 transition-all duration-700 sm:-bottom-64 sm:-right-64 w-160 h-160    rounded-full bg-cover bg-center bg-[url('images/bg-pattern-bottom.svg')]" >
+
+            </div>
+          
+          <!--
+          <img  class=" w-192 h-192 absolute -top-80 -left-80 sm:-top-96 sm:-left-96" src="images/bg-pattern-top.svg" alt="bg-pattern-top">
+          <img  class=" w-192 h-192 absolute -bottom-80 -right-80 sm:-bottom-96 sm:-right-96" src="images/bg-pattern-bottom.svg" alt="bg-pattern-bottom">
+          -->
+        </div>
+      </div>
+      <div class=" absolute  top-0 left-0 w-screen h-screen  " >
+        <div class="relative flex items-center justify-center w-screen h-screen" >
+          <div class="absolute w-full h-full flex  items-center justify-center" >
+              <div class="absolute shadow-lg rounded-xl w-80 h-96 bg-white" >
+                <img class="relative z-0 top-0 rounded-t-xl" src="images/bg-pattern-card.svg" alt="" srcset="">
+                <div class="relative left-24 border-4 border-white -top-16 z-20 w-32 h-32 bg-center bg-cover bg-[url('images/image-victor.jpg')] rounded-full">
+
+                </div>
+                <h1 class="text-center -mt-12 font-semibold">
+                  Victor Crest <span class="font-thin text-lg ml-2 text-my-dark-gray" >26</span>
+                </h1>
+
+                <p class="text-center mt-2" >
+                  London
+                </p>
+                <div class="bg-my-dark-gray mt-6  w-full" style="height: 0.08px;">
+
+                </div>
+
+                <div class="flex justify-center mt-6 text-center">
+                  <div>
+                    <h2 class="text-xl font-semibold" >
+                      80K
+                    </h2>
+                    <p class="text-xs font-light text-my-dark-gray">
+                      Followers
+                    </p>
+                  </div>
+                  <div class="mx-8">
+                    <h2 class="text-xl font-semibold" >
+                      803K
+                    </h2>
+                    <p class="text-xs font-light text-my-dark-gray">
+                      Likes
+                    </p>
+                  </div>
+                  <div>
+                    <h2 class="text-xl font-semibold" >
+                      1.4K
+                    </h2>
+                    <p class="text-xs font-light text-my-dark-gray">
+                      Followers
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          <div class="absolute" >
+  
+          </div>
+        </div>
+        
+      </div>
+  </main>
+  
+  <footer class="attribution fixed">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Esdras Koya</a>.
+  </footer>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
