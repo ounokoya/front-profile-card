@@ -38,3 +38,9 @@ npm-debug.log*
 *.pem
 .DS_Store
 Thumbs.db
+
+# Dépendances, build et rapports de tests (ajouté à la refonte v2)
+/node_modules
+/dist
+/test-results
+/playwright-report
