@@ -45,3 +45,10 @@ Koya : « Je valide (G3) » pour le lot 3. Maquette : `specs/visuel/penpot/maque
 |---|---|---|
 | G3-1 | Tablette (Q-B4) | La même carte centrée ; cercles du fond placés comme en desktop dès 768 px, comme en mobile en dessous |
 | G3-2 | Seuils visuels | 5 % pour les 2 écrans calibrés |
+
+## Spec, ADR et verrou code (2026-11-05)
+
+- Spec : `specs/specifications/profile-card-component.md` ; tests écrits avant le code, contrôle rouge fait (voir les commits `test:`).
+- ADR : `specs/adr/v2.0/` (ADR-0003 à ADR-0006) et leurs fitness functions, contrôle rouge fait.
+- Polices : Koya accepte le téléchargement des paquets Fontsource (ADR-0004).
+- **Verrou code** : Koya confirme « Claude écrit le code ».
