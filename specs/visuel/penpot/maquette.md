@@ -1,6 +1,6 @@
 # Maquette Penpot — Profile card component (refonte v2.0.0)
 
-> SDL-FM 1.5.0 Phase 3 (remise à niveau, étape B, lot 3). Fichier Penpot : « FM Newbie » (créé par Koya ; nom vérifié avant chaque écriture), page « Profile card ». **En attente de G3.**
+> SDL-FM 1.5.0 Phase 3 (remise à niveau, étape B, lot 3). Fichier Penpot : « FM Newbie » (créé par Koya ; nom vérifié avant chaque écriture), page « Profile card ». **Validée (G3, 2026-11-05)** avec les propositions : la même carte centrée en tablette, cercles du fond placés comme en desktop dès 768 px (G3-1), seuils de 5 % (G3-2).
 > Décisions G2 appliquées : attribution en Navy 950 assombri (Q-A1), statistiques en `dl` (Q-B1), photo décorative (Q-B2), « 26 » hors du titre (Q-B3), même carte à toutes les largeurs (Q-B4).
 
 ## Rendu des exports

@@ -36,3 +36,12 @@ Koya : « Je valide (G2) » pour le lot 3. Toutes les propositions sont retenues
 | Q-B3 | Titre | `h1` « Victor Crest » ; « 26 » à côté, hors du titre, en Gray 500 |
 | Q-B4 | Pas de maquette tablette | La même carte à toutes les largeurs : 350 px au plus, 24 px des bords en dessous ; motifs du fond placés par rapport au centre de la fenêtre |
 | Q-B5 | Refonte | Même dépôt en v2.0.0, GitHub Pages, « Edit solution » |
+
+## Maquette validée (G3, 2026-11-05)
+
+Koya : « Je valide (G3) » pour le lot 3. Maquette : `specs/visuel/penpot/maquette.md`. Toutes les propositions sont retenues.
+
+| # | Point | Décision |
+|---|---|---|
+| G3-1 | Tablette (Q-B4) | La même carte centrée ; cercles du fond placés comme en desktop dès 768 px, comme en mobile en dessous |
+| G3-2 | Seuils visuels | 5 % pour les 2 écrans calibrés |
