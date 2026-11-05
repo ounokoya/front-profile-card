@@ -1,1 +1,78 @@
 @import "tailwindcss";
+/* ADR-0004 : Kumbh Sans servie avec le site */
+@import "@fontsource/kumbh-sans/400.css";
+@import "@fontsource/kumbh-sans/700.css";
+
+/* ADR-0003 : tokens de la bibliothèque Penpot (specs/visuel/penpot/maquette.md) */
+@theme {
+  --color-*: initial;
+  --color-white: hsl(0, 0%, 100%);
+  --color-blue-600: hsl(185, 75%, 39%);
+  --color-navy-950: hsl(229, 23%, 23%);
+  --color-gray-500: hsl(227, 10%, 46%);
+  --color-gray-100: hsl(225, 10%, 92%);
+  --color-navy-aa: hsl(229, 23%, 16%); /* Q-A1 : attribution, 5,05:1 sur Blue 600 */
+
+  --font-sans: "Kumbh Sans", sans-serif;
+  --text-name: 1.125rem;
+  --text-name--line-height: 1.5;
+  --text-city: 0.875rem;
+  --text-city--line-height: 1.5;
+  --text-stat: 1.125rem;
+  --text-stat--line-height: 1.5;
+  --text-label: 0.625rem;
+  --text-label--line-height: 1.5;
+  --text-label--letter-spacing: 0.09375rem;
+  --text-attribution: 0.6875rem;
+  --text-attribution--line-height: 1.5;
+
+  --radius-card: 0.9375rem;
+  --shadow-card: 0 3.125rem 6.25rem hsl(192 80% 14% / 40%);
+}
+
+/* Q-A1 : liens de l'attribution, soulignés sauf au survol ; contour de focus de 2 px décalé de 2 px */
+@utility link {
+  color: var(--color-navy-aa);
+  text-decoration-line: underline;
+  &:hover {
+    text-decoration-line: none;
+  }
+  &:focus-visible {
+    outline: 0.125rem solid var(--color-navy-aa);
+    outline-offset: 0.125rem;
+  }
+}
+
+/* ADR-0005 : motif du haut de la carte */
+@utility card-pattern {
+  background-image: url("../images/bg-pattern-card.svg");
+  background-repeat: no-repeat;
+}
+
+/* trait décoratif au-dessus des statistiques */
+@utility separator {
+  border-block-start: calc(var(--spacing) / 4) solid var(--color-gray-100);
+}
+
+/* ADR-0005 : cercles du fond ; le coin haut-gauche de chaque SVG de 978 px est au centre de la fenêtre
+   plus un décalage mesuré (Phase 3) : calc(50% + décalage + 489 px), en rem */
+@utility page-bg {
+  background-color: var(--color-blue-600);
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-position:
+    calc(50% - 22.03125rem) calc(50% - 38.28125rem),
+    calc(50% + 28.96875rem) calc(50% + 12.71875rem);
+  @variant md {
+    background-position:
+      calc(50% - 32.125rem) calc(50% - 24.375rem),
+      calc(50% + 28.8125rem) calc(50% + 31.5rem);
+  }
+}
+
+@layer base {
+  body {
+    /* largeurs de lettres non arrondies au pixel : les lignes se coupent comme sur l'image FM */
+    text-rendering: geometricPrecision;
+  }
+}

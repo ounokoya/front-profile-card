@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-  <script type="module" src="/src/main.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Profile card component</title>
+    <script type="module" src="/src/main.js"></script>
   </head>
-<body>
-  Victor Crest
-  26
-  London
+  <!-- ADR-0006 : 3 rangées, la carte au centre de la fenêtre, le pied de page en bas ; ADR-0005 : cercles du fond -->
+  <body class="page-bg grid min-h-dvh grid-rows-[1fr_auto_1fr] font-sans">
+    <main class="row-start-2">
+      <article class="card-pattern mx-auto w-[min(21.875rem,100%_-_3rem)] overflow-clip rounded-card bg-white pt-21.75 pb-5.75 text-center shadow-card">
+        <img class="mx-auto block size-26.5 rounded-full border-[0.3125rem] border-white" src="./images/image-victor.jpg" alt="" width="96" height="96">
+        <div class="mt-4 flex items-baseline justify-center gap-2.25 text-name">
+          <h1 class="font-bold text-navy-950">Victor Crest</h1>
+          <span class="text-gray-500">26</span>
+        </div>
+        <p class="mt-1.25 text-city text-gray-500">London</p>
 
-  80K
-  Followers
+        <!-- Q-B1 : libellé puis chiffre à la lecture, chiffre au-dessus à l'écran -->
+        <dl class="separator mt-5.75 grid grid-cols-3 px-6.75 pt-5.25">
+          <div class="flex flex-col">
+            <dt class="order-2 mt-0.25 text-label text-gray-500">Followers</dt>
+            <dd class="order-1 text-stat font-bold text-navy-950">80K</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="order-2 mt-0.25 text-label text-gray-500">Likes</dt>
+            <dd class="order-1 text-stat font-bold text-navy-950">803K</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="order-2 mt-0.25 text-label text-gray-500">Photos</dt>
+            <dd class="order-1 text-stat font-bold text-navy-950">1.4K</dd>
+          </div>
+        </dl>
+      </article>
+    </main>
 
-  803K
-  Likes
-
-  1.4K
-  Photos
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
-</body>
+    <footer class="row-start-3 self-end py-4 text-center text-attribution text-navy-aa">
+      Challenge by <a class="link" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a class="link" href="https://www.frontendmentor.io/profile/ounokoya">Koya Esdras</a>.
+    </footer>
+  </body>
 </html>
