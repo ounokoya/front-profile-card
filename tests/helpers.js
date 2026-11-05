@@ -13,7 +13,8 @@ export async function open(page, width, height) {
 }
 
 export const card = (page) => page.getByRole('article')
-export const photo = (page) => card(page).locator('img[src*="image-victor"]')
+// la photo est la seule image de la carte (Vite intègre les petites images en data: : pas de nom de fichier dans src)
+export const photo = (page) => card(page).locator('img')
 export const title = (page) => page.getByRole('heading', { level: 1, name: 'Victor Crest', exact: true })
 export const footer = (page) => page.getByRole('contentinfo')
 export const link = (page, name) => footer(page).getByRole('link', { name })
