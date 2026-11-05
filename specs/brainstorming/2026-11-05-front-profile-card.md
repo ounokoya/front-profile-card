@@ -23,3 +23,16 @@ Plan validé (G1, 2026-11-05) au niveau du programme : `frontmentor/specs/plan-r
 ## Analyse (Phase 2)
 
 `specs/visuel/front-profile-card-analyse.png` (et `.excalidraw`).
+
+## Analyse validée (G2, 2026-11-05)
+
+Koya : « Je valide (G2) » pour le lot 3. Toutes les propositions sont retenues.
+
+| # | Point | Décision |
+|---|---|---|
+| Q-A1 | Attribution sur Blue 600 (lien #3E52A3 2,32:1, Navy 950 4,08:1) | Texte et liens en Navy 950 assombri `hsl(229, 23%, 16%)` #1F2332 : 5,05:1 sur Blue 600, 6,34:1 sur le cercle clair |
+| Q-B1 | Statistiques | Liste de description `dl` : libellé en `dt`, chiffre en `dd` affiché au-dessus ; lu « Followers, 80K » |
+| Q-B2 | Photo | `alt=""` : le nom suit juste dessous |
+| Q-B3 | Titre | `h1` « Victor Crest » ; « 26 » à côté, hors du titre, en Gray 500 |
+| Q-B4 | Pas de maquette tablette | La même carte à toutes les largeurs : 350 px au plus, 24 px des bords en dessous ; motifs du fond placés par rapport au centre de la fenêtre |
+| Q-B5 | Refonte | Même dépôt en v2.0.0, GitHub Pages, « Edit solution » |
