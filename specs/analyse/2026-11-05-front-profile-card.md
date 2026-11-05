@@ -40,6 +40,10 @@ Aucun écart.
 
 Constat de la construction (Phase 6) : la marge haute de la photo traversait la carte (`overflow: clip` n'isole pas les marges, contrairement à `overflow: hidden`) : la carte commençait 87 px trop bas. La distance vient maintenant du retrait intérieur de la carte.
 
-## 4. Verdict
+## 4. En ligne (Phase 12)
 
-Conforme à la spec et à la maquette validée (G3). Prêt pour la Phase 9 (README).
+`BASE_URL=https://ounokoya.github.io/front-profile-card/ npx playwright test --workers=2` : **27 réussis sur 27**, écarts visuels identiques au local (0,49 % et 2,08 %), sur la v2.0.0 déployée depuis la branche `gh-pages` (publication avec l'accord de Koya, 2026-11-05). GitHub a activé Pages de lui-même à la première publication de la branche `gh-pages`.
+
+## 5. Verdict
+
+Conforme à la spec et à la maquette validée (G3). README fait (Phase 9) ; v2.0.0 en ligne. Prêt pour « Edit solution » sur FM (Phase 13).
