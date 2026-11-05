@@ -4,10 +4,12 @@ import { readFileSync } from 'node:fs'
 import { HtmlValidate } from 'html-validate'
 import { ESLint } from 'eslint'
 
-// Spec §7 — S13 à S15 : validateur W3C Nu et règles des vérifications automatiques de FM
+// Spec §7 — S13 à S15 : validateur W3C Nu et règles des vérifications automatiques de FM ;
+// fitness functions des ADR-0003 et ADR-0004
 
 const root = (path) => new URL(`../${path}`, import.meta.url)
 const vnu = root('node_modules/vnu-jar/build/dist/vnu.jar').pathname
+const COLOR = /#[0-9a-f]{3,8}\b|\brgba?\(|\bhsla?\(/i
 
 test('S13 — le HTML servi passe le validateur W3C Nu sans erreur', async ({ request }) => {
   const html = await (await request.get('./')).text()
@@ -41,6 +43,31 @@ test('S15 — Règles FM : eslint sans erreur dans le JavaScript du dépôt', as
 })
 
 
+
+test('ADR-0003 — aucune couleur écrite en dur hors des tokens', () => {
+  // le texte de la page contient « #3429 » (titre de la spec) : dans le HTML, seuls les classes, les styles et les blocs <style> comptent
+  const html = readFileSync(root('index.html'), 'utf8')
+  const sources = {
+    'index.html (classes, styles)': [...html.matchAll(/(?:class|style)="([^"]*)"|<style[^>]*>([\s\S]*?)<\/style>/g)].map((m) => m[1] ?? m[2]).join('\n'),
+    // les tokens sont des propriétés personnalisées (--…) : seules leurs valeurs portent des couleurs
+    'src/style.css (hors tokens)': readFileSync(root('src/style.css'), 'utf8').replace(/--[\w-]+\s*:[^;]+;/g, ''),
+  }
+  expect(Object.entries(sources).filter(([, text]) => COLOR.test(text)).map(([file]) => file)).toEqual([])
+})
+
+test('ADR-0004 — rien n\'est chargé hors du domaine ; Kumbh Sans 400 et 700 se chargent', async ({ page, baseURL }) => {
+  const outside = []
+  page.on('request', (r) => { if (new URL(r.url()).origin !== new URL(baseURL).origin) outside.push(r.url()) })
+  await page.goto('./')
+  // load() télécharge la graisse même si aucun texte ne l'utilise encore ; [] si la police n'est pas déclarée
+  const weights = await page.evaluate(async (faces) => {
+    const found = []
+    for (const font of faces) if ((await document.fonts.load(font)).length) found.push(font)
+    return found
+  }, ['400 16px "Kumbh Sans"', '700 16px "Kumbh Sans"'])
+  expect(weights).toEqual(['400 16px "Kumbh Sans"', '700 16px "Kumbh Sans"'])
+  expect(outside).toEqual([])
+})
 
 // Règle FM vue sur les solutions précédentes (SDL-FM Phase 6) : les longueurs écrites à la main sont en rem
 test('Règles FM — aucune longueur en px écrite à la main (src/style.css, valeurs arbitraires du HTML)', () => {
